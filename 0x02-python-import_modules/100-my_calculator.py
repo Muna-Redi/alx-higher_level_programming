@@ -2,8 +2,7 @@
 import sys
 from calculator_1 import add, div, sub, mul
 
-if __name__ != "__main__":
-    exit()
+if __name__ == "__main__":
 
     lenght = len(sys.argv) - 1
     result = 0
