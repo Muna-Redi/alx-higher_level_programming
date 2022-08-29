@@ -5,4 +5,4 @@ def print_matrix_integer(matrix=[[]]):
     for i in range(mat_len):
         for num in matrix[i]:
             print("{:d}".format(num), end = '')
-        print()
+    print()
