@@ -2,6 +2,8 @@
 
 def max_integer(my_list=[]):
     # checking for an empty list
+    if not my_list:
+        return (None)
     if type(my_list) is list:
         if len(my_list) < 1:
             return (None)
