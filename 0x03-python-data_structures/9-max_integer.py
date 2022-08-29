@@ -11,7 +11,7 @@ def max_integer(my_list=[]):
     largest = 0
 
     # travarse throught the list in search of the maximu number
-      for num in my_list:
+    for num in my_list:
         if largest < num:
             largest = num
 
