@@ -3,7 +3,7 @@
 def max_integer(my_list=[]):
     # checking for an empty list
     if len(my_list) < 1:
-        return (None)
+        return ("None")
 
     # innitialise largest to 0
     largest = 0
