@@ -8,8 +8,7 @@ def delete_at(my_list=[], idx=0):
         return (my_list)
 
     # deleting the item of index idx
-    else:
-        del my_list[idx]
+    del my_list[idx]
 
     # return modified list
     return (my_list)
