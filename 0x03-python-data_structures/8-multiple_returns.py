@@ -5,6 +5,6 @@ def multiple_returns(sentence):
     if lenght > 0:
         char = sentence[0]
     else:
-        char ="None"
+        char = "None"
     my_tuple = (lenght, char)
     return (my_tuple)
