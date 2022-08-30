@@ -33,10 +33,8 @@ int is_palindrome(listint_t **head)
 			continue;
 		}
 		else
-		{
 			free(nums);
 			return (0);
-		}
 	}
 		free(nums);
 		return (1);
