@@ -1,37 +1,61 @@
 #include "lists.h"
 
 /**
-  * is_palindrome - A function that checks if a list is a palindrome.
-  * @head: The pointer to the head of the list.
-  * Return: 0 if list not a palindrome, 1 if it is.
-  */
+* is_palindrome - checks if a singly linked list is palindrome
+* @head: double pointer to head of the list
+* Return: 0 if palindrome and 1 oif otherwise
+*/
 int is_palindrome(listint_t **head)
 {
-	listint_t *tmp = *head;
-	int nodes = 0, i = 0, *array = NULL;
+	listint_t *tmp = NULL, *tmp2 = NULL;
+	int *nums, i = 0, len;
 
 	if (*head == NULL || head == NULL || (*head)->next == NULL)
 		return (1);
-	while (tmp)
+	len = list_size(head);
+	nums = malloc(sizeof(int *) * (len + 1));
+	if (nums == NULL)
+		return (1);
+	tmp = tmp2 = *head;
+	while (tmp->next)
 	{
-		nodes++;
+		nums[i] = tmp->n;
 		tmp = tmp->next;
+		i++;
 	}
-	array = malloc(sizeof(int) * nodes);
-	tmp = *head;
-	while (tmp)
+	nums[i] = tmp->n;
+	while (i >= 0 && tmp2 != NULL)
 	{
-		array[i++] = tmp->n;
-		tmp = tmp->next;
-	}
-	for (i = 0; i < nodes / 2; i++)
-	{
-		if (array[i] != array[nodes - 1 - i])
+		if (tmp2->n == nums[i])
 		{
-			free(array);
-			return (0);
+			tmp2 = tmp2->next;
+			i--;
+			continue;
 		}
+		else
+			free(nums);
+			return (0);
 	}
-	free(array);
-	return (1);
+		free(nums);
+		return (1);
+}
+/**
+* list_size - gets the size of a list
+* @head: pointer to head of the list
+* Return: size of the list
+*/
+int list_size(listint_t **head)
+{
+	listint_t *tmp = NULL;
+	int i = 1;
+
+	tmp = *head;
+	if (*head == NULL)
+		return (0);
+	while (tmp)
+	{
+		tmp = tmp->next;
+		i++;
+	}
+	return (i);
 }
