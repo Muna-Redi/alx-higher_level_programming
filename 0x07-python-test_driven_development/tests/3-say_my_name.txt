@@ -1,0 +1,102 @@
+""" ______________________________________DOCTEST______________________________
+
+module:- 3-say_my_name_____________________
+
+function:- say_my_name____________________
+    This function prints the name of an individual
+    given the first and last name of the individual
+
+    args:
+        first_name (str): First name
+        last_name (str): Last name
+"""
+===================================================================================================
+
+####Importing the module
+##
+------------------------Begin
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+===========================================Done
+
+####supplying string args:
+##
+------------------------Begin
+
+>>> say_my_name("Ade", "bayo")
+My name is Ade bayo
+
+####suplying ists, dict, tuple, set:
+##
+------------------------Begin
+
+#test for list:
+>>> say_my_name(["John"], ["Paul"])
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+
+#test for set:
+>>> say_my_name({"Eze", "Amaka"}, "Tina")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+
+#test for dict:
+>>> say_my_name({"philip": "chukwu"}, {"oge": "chukwu"})
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+
+#test for tuple:
+>>> say_my_name("woods", ("John", "Mark"))
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+
+
+===========================================Done
+
+####suplying int, floats and empty arguments:
+##
+------------------------Begin
+
+#int argument:
+>>> say_my_name(12, "Joy")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+
+#int argument:
+>>> say_my_name(3/6, "Mark")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+
+#float argument:
+>>> say_my_name("chisom", 1.2)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+
+
+#missing arguments:
+>>> say_my_name()
+Traceback (most recent call last):
+...
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+
+#missing last_name arguments:
+>>> say_my_name("Peter")
+My name is Peter 
+
+
+#missing arguments:
+>>> say_my_name("meth",)
+My name is meth 

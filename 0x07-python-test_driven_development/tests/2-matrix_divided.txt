@@ -1,0 +1,153 @@
+""" ______________________________________DOCTEST______________________________
+
+module:- 2-matrix_divided_____________________
+
+function:- matrix_divided____________________
+    This function divides a matrix by a given
+    integer or float and returns a new matrix containing
+    the results of the division round in 2.dp
+
+    args:
+        matrix (double list): list of integer or float lists
+        div (int or float): matrix divisor
+"""
+===================================================================================================
+
+####Importing the module
+##
+------------------------Begin
+>>> matrix_div = __import__('2-matrix_divided').matrix_divided
+
+===========================================Done
+####Supplying matrix and int as divisor
+##
+------------------------Begin
+
+#positive matrix and positive divisor:
+>>> print(matrix_div(([[1,2,3], [4,5,6]]), 3))
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+
+#positive matrix and negative divisor:
+>>> print(matrix_div(([[1,2,3], [4,5,6]]), -3))
+[[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0]]
+
+#negative matrix and positive divisor:
+>>> print(matrix_div(([[-1,-2,-3], [-4,-5,-6]]), 3))
+[[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0]]
+
+#negative matrix negative divisor
+>>> print(matrix_div(([[-1,-2,-3], [-4,-5,-6]]), -3))
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+
+===========================================Done
+
+####supplying matrix and float divisor:
+##
+------------------------Begin
+
+#matrix containing integers and a float divisor:
+>>> print(matrix_div(([[1,2,3], [4,5,6]]), 3/2))
+[[0.67, 1.33, 2.0], [2.67, 3.33, 4.0]]
+
+
+
+#matrix containing float and a float divisor:
+>>> print(matrix_div(([[1,2,1.5], [4,5/2,6]]), 1.5))
+[[0.67, 1.33, 1.0], [2.67, 1.67, 4.0]]
+
+
+
+#matrix containing float and negative float divisor:
+print(mdiv(([[1, 2, 3/2], [4, 2.5, 6]]), -1.5))
+[[-0.67, -1.33, -1.0], [-2.67, -1.67, -4.0]]
+
+===========================================Done
+
+####supplying a matrix with a zero divisor
+##
+------------------------Begin
+
+#matrix and zero divisor
+>>> print(matrix_div(([[1,2,3], [4,5,6]]), 0))
+Traceback (most recent call last):
+...
+ZeroDivisionError: division by zero
+
+
+===========================================Done
+
+####supplying lists, tuple, dictionaries and uneven sized matrix:
+##
+------------------------Begin
+
+#list and an int divisor
+>>> print(matrix_div(([1,2,3]), 3))
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers or floats
+
+
+#unequal rows matrix
+>>> print(matrix_div(([[1,2,3], [4,5]]), 3))
+Traceback (most recent call last):
+...
+TypeError: Each row of the matrix must have the same size
+
+
+#dividing matrix with a list:
+>>> print(matrix_div(([[1,2,3], [4,5,6]]), [1,2]))
+Traceback (most recent call last):
+...
+TypeError: div must be a number
+
+
+#dividing matrix with a ttuple:
+>>> print(matrix_div(([[1,2,3], [4,5,6]]), (4,6)))
+Traceback (most recent call last):
+...
+TypeError: div must be a number
+
+
+#dividing a dictionary:
+>>> print(matrix_div(({"eye": "brown", "hair": "black"}), 2))
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers or floats
+
+
+#dividing a tuple:
+>>> print(matrix_div((1, 3), 2))
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers or floats
+
+#dividing an empty matrix
+>>> print(matrix_div([[]], 3))
+[[]]
+
+#dividing an empty list:
+>>> print(matrix_div([], 2))
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers or floats
+
+
+#missing divisor:
+print(matrix_div([[1,2,3], [3,6,1]], ))
+Traceback (most recent call last):
+...
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+===========================================Done
+
+
+
+
+
+
+
+
+
+

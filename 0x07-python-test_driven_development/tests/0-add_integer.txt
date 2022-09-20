@@ -1,0 +1,164 @@
+""" ______________________________________DOCTEST______________________________
+
+module:- 0-add_integer_____________________
+
+function:- add_integer____________________
+    args:
+        a (int): first argument to be added
+        b (int):
+            second optional argument
+            with default value of 98
+"""
+===================================================================================================
+
+####Importing the module 0-add_integer as add_int:
+##
+------------------------
+#now we import:
+>>> add_int = __import__('0-add_integer').add_integer
+
+
+===========================================Done
+
+####Testing for positive integers:-
+##
+##positive and negative:
+##
+------------------------Begin
+#positves:
+>>> add_int(2, 3)
+5
+
+
+
+#negatives:
+>>> add_int(-3, -7)
+-10
+
+
+
+#Both positive and negative:
+>>> add_int(4, -13)
+-9
+
+
+
+#Both negative and positive:
+>>> add_int(-1, 8)
+7
+
+
+===========================================Done
+
+####Testing For Floats:-
+##
+##Positive and Negative:
+##
+	Note:
+        floats are casted to ints
+        before addition
+        
+------------------------Begin
+#positives:
+>>> add_int(2.4, 4.5)
+6
+
+
+
+#negatives:
+>>> add_int(-4.7, -3.8)
+-7
+
+
+
+#both negative and positive:
+>>> add_int(-5.5, 9.3)
+4
+
+#both positve and negative:
+>>> add_int(6.1, -20.6)
+-14
+
+
+
+===========================================Done
+
+####Testing for missing arguments
+##
+	Note:
+        argument b is optional
+        default value of 98
+------------------------Begin
+
+####empty argument/params
+>>> add_int()
+Traceback (most recent call last):
+...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+#missing arg b
+>>> add_int(8)
+106
+>>> add_int(8, )
+106
+>>> add_int(8,)
+106
+
+===========================================Done
+
+####Testing Type String:
+##
+##strings, ints and floats
+##
+------------------------Begin
+#adding strings
+>>> add_int('a', 'b')
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+
+
+#adding int and string:
+>>> add_int(9, 'b')
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+
+#adding string and float:
+>>> add_int(2.4, "rice")
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+
+===========================================Done
+
+####Testing for lists:
+##
+##lists with ints and floats
+##
+------------------------Begin
+
+#adding lists:
+>>> add_int([1,2,3], [4,6,21])
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+
+#adding strings and integer
+>>> add_int(2, [2,6,3])
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+
+#adding list with float
+>>> add_int(4.5, [1,5,3])
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+============================================Done
