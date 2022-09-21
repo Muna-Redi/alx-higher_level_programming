@@ -1,8 +1,5 @@
-"""
->>> lc = __import__('19-copy_list').copy_list
+#!/usr/bin/python3
+mgs = __import__('100-magic_string').magic_string
+for i in range(10):
+    print(mgs())
 
->>> l = [2,4,5]
->>> b = lc(l)
->>> b
-[2, 4, 5]
-"""
