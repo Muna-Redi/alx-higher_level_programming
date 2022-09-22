@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 
+""" Defines a function that divides a mtrix by a scalar """
+
+
 def matrix_divided(matrix, div):
     """Divides a matrix with a divisor
 

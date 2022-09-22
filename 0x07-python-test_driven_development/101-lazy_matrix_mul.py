@@ -2,6 +2,9 @@
 
 import numpy as np
 
+""" module uses numpy to multiply 2 matrices """
+
+
 def lazy_matrix_mul(m_a, m_b):
     """
     Multiply two matrix
