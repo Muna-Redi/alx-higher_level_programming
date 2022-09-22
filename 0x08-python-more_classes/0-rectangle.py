@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-# -*- coding: utf-8 -*-
 
 class Rectangle:
     """Empty class Rectangle that defines a rectangle figure
@@ -7,5 +6,4 @@ class Rectangle:
     Attributes:
         empty
     """
-
     pass
