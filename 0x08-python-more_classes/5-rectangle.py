@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# -*- coding: utf-8 -*-
+
 
 class Rectangle:
     """class Rectangle that defines a rectangle figure
