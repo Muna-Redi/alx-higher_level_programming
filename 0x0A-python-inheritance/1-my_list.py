@@ -11,6 +11,6 @@ class MyList(list):
         """
         Public instance method that prints sorted list
         """
-        list_copy = self[:]
+        list_copy = self.copy
         list_copy.sort()
         print(list_copy)
