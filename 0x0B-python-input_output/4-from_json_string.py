@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""Defining a funv=ction"""
+"""Defining a function"""
 
 
 import json
