@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""Defining a function"""
+"""Importing a module"""
 
 
 import sys
