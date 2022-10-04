@@ -67,3 +67,42 @@ class Base:
         else:
             with open(file_name, 'w', encoding='utf-8') as f:
                 f.write("")
+
+    def from_json_string(json_string):
+        """
+            Returns a list object representaion of
+            a json_string
+
+            Args:
+                json_string (json): a json string to be loaded
+
+            returns: a list of dictionary
+        """
+        new_list = []
+
+        if json_string is None or not json_string:
+            return new_list
+
+        new_list = json.loads(json_string)
+        return new_list
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ creates and update an instance of a
+            Rectangle or Square
+
+            Args:
+                cls (class(: class whose instance
+                is to be updated
+
+                dictionary (dictionary): dictionary
+                containing the update information
+        """
+
+        if cls.__name__ == "Rectangle":
+            dummy = cls(2, 3, 2, 3)
+        elif cls.__name__ == "Square":
+            dummy = cls(3, 3, 3)
+
+        dummy.update(**dictionary)
+
