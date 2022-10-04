@@ -55,15 +55,35 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """
+            saves a list of objects to a json file
+
+            Args:
+                cls (class): class to which objects belong
+
+                list_objs (list): list of objects of the class cls
+
+        """
 
         if list_objs is not None and len(list_objs) != 0:
             file_name = cls.__name__ + ".json"
             list_dictionaries = []
+
             for obj in list_objs:
                 list_dictionaries.append(cls.to_dictionary(obj))
+
             with open(file_name, 'w', encoding='utf-8') as f:
                 jstring = cls.to_json_string(list_dictionaries)
                 f.write(jstring)
+
         else:
             with open(file_name, 'w', encoding='utf-8') as f:
                 f.write("")
+    @staticmethod
+    def from_json_string(json_string):
+
+        new_list = []
+        if json_string is None or not json_string:
+            return new_list
+        new_list = json.loads(json_string)
+        return new_list

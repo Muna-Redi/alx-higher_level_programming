@@ -22,7 +22,7 @@ class Student:
 
     def to_json(self):
         """
-        Represents of Student into json format
+        Represent a Student into json format
 
         Return:
             Student class as a json format
