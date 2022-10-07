@@ -12,6 +12,7 @@
 
 import json
 
+
 class Base:
     """  Class Base
 
@@ -37,7 +38,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """ 
+        """
             this method returns a json string
 
             Args:
@@ -79,6 +80,7 @@ class Base:
         else:
             with open(file_name, 'w', encoding='utf-8') as f:
                 f.write("")
+
     @staticmethod
     def from_json_string(json_string):
         """
@@ -95,19 +97,18 @@ class Base:
         new_list = json.loads(json_string)
         return new_list
 
-
     @classmethod
     def create(cls, **dictionary):
 
-        """ 
-            creates and returns an instance of child classes Rectangle or Square
+        """
+            creates and returns an instance of child classes Rectangle or
+            Square
 
             cls (class): Class whose instance is  to be created and updated
 
             Args: dictionary (dictionary): a dictionary containing
                 the update informtion of the created instance
         """
-
 
         from models.square import Square
         from models.rectangle import Rectangle
@@ -140,16 +141,14 @@ class Base:
         file_name = cls.__name__ + ".json"
         objs = []
         j_dict = []
-        with open(file_name, "r", encoding='utf-8') as f:
 
-            j_dict = cls.from_json_string(f.read())
-            print(j_dict)
-            for key, value in enumerate(j_dict):
-                print("key is {}".format(key))
-                print("value is {}".format(value))
-                objs.append(cls.create(**value))
-            return objs
-            
-        return []
+        try:
+            with open(file_name, "r", encoding='utf-8') as f:
 
-        
+                j_dict = cls.from_json_string(f.read())
+                for key, value in enumerate(j_dict):
+                    objs.append(cls.create(**value))
+                return objs
+
+        except FileNotFoundError:
+            return []

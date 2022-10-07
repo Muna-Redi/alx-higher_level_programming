@@ -9,6 +9,7 @@
 
 from models.base import Base
 
+
 class Rectangle(Base):
     """ class Rectangle
 
@@ -114,7 +115,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """ 
+        """
             public getter for the attribute x
 
             return: private instance attribute x
@@ -123,7 +124,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, x):
-        """ 
+        """
             setter for private instance attribute x
 
             Args:
@@ -211,7 +212,7 @@ class Rectangle(Base):
 
                 elif i == 4:
                     self.y = args[i]
-        
+
         else:
             if kwargs is not None and len(kwargs) != 0:
                 for key, value in kwargs.items():
@@ -249,11 +250,12 @@ class Rectangle(Base):
     def __str__(self):
         """ overwrites the __str__ method with a string"""
 
-        return "[{}] ({:d}) {:d}/{:d} - {:d}/{:d}".format(\
-            self.__class__.__name__, self.id, self.x, self.y,\
-                self.width, self.height)
+        return "[{}] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
+            self.__class__.__name__, self.id, self.x, self.y,
+            self.width, self.height)
 
     def to_dictionary(self):
         """ returns a dictionary representation of a class instance"""
 
-        return {"x": self.x, "y": self.y, "id": self.id, "width": self.width, "height": self.height}
+        return {"x": self.x, "y": self.y, "id": self.id, "width":
+                self.width, "height": self.height}

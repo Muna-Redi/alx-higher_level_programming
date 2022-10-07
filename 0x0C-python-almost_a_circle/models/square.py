@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 
-""" 
+"""
     defining class square that inherits from
     class Rectangle
 """
 
 
 from models.rectangle import Rectangle
+
 
 class Square(Rectangle):
     """" class square with Rectangle inheritance
@@ -59,13 +60,14 @@ class Square(Rectangle):
         self.height = value
 
     def __str__(self):
-        """ 
+        """
             str method returns the string representation
             of the object/ class instance
         """
 
-        return "[{}] ({}) {}/{} - {}".format(self.__class__.__name__,\
-            self.id, self.x, self.y, self.height)
+        return "[{}] ({}) {}/{} - {}".format(self.__class__.__name__,
+                                             self.id, self.x, self.y,
+                                             self.height)
 
     def update(self, *args, **kwargs):
         """
@@ -107,10 +109,10 @@ class Square(Rectangle):
                         self.y = value
 
     def to_dictionary(self):
-        """ 
+        """
            returns a dictionary representation of
             the class instance
         """
 
-        return {"id": self.id, "size": self.size, "x": self.x,\
-             "y": self.y}
+        return {"id": self.id, "size": self.size, "x": self.x,
+                "y": self.y}
