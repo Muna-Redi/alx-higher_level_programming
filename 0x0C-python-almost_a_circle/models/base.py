@@ -81,9 +81,75 @@ class Base:
                 f.write("")
     @staticmethod
     def from_json_string(json_string):
+        """
+           Returns a list object representation of the
+           json list string
 
+           Args:
+               json_string (json): json string
+
+        """
         new_list = []
         if json_string is None or not json_string:
             return new_list
         new_list = json.loads(json_string)
         return new_list
+
+
+    @classmethod
+    def create(cls, **dictionary):
+
+        """ 
+            creates and returns an instance of child classes Rectangle or Square
+
+            cls (class): Class whose instance is  to be created and updated
+
+            Args: dictionary (dictionary): a dictionary containing
+                the update informtion of the created instance
+        """
+
+
+        from models.square import Square
+        from models.rectangle import Rectangle
+
+        dummy = Square(2, 2, 1)
+
+        if dictionary is None or not dictionary:
+            return None
+
+        if cls.__name__ == "Rectangle":
+            dummy = Rectangle(1, 2, 3)
+
+        elif cls.__name__ == "Square":
+            dummy = Square(2, 2, 3)
+
+        dummy.update(**dictionary)
+        return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """
+            defining a method tht reurns a list of instances of a calss
+
+            Args:
+                cls (clss): class whose instaces is to be returned
+
+        """
+        import json
+
+        file_name = cls.__name__ + ".json"
+        objs = []
+        j_dict = []
+        with open(file_name, "r", encoding='utf-8') as f:
+
+            j_dict = cls.from_json_string(f.read())
+            print(j_dict)
+            for key, value in enumerate(j_dict):
+                print("key is {}".format(key))
+                print("value is {}".format(value))
+                objs.append(cls.create(**value))
+            return objs
+            
+        return []
+
+        
