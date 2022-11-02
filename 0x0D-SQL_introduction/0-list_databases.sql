@@ -1,2 +1,3 @@
-#!/usr/bin/env mysql
-echo $mysql -u user -p -e 'show databases;'
+-- lists all the databases in mysql server
+-- showing all Databases!
+SHOW DATABASES
