@@ -1,3 +1,3 @@
 -- give full description of a table
 -- describes first_table
-DESC food;
+DESC first_table;
