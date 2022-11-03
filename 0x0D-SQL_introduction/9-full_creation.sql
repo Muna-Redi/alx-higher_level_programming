@@ -8,8 +8,12 @@ CREATE TABLE IF NOT EXISTS second_table (
 -- adding multipler rows
 INSERT INTO second_table
 VALUES (1, "John", 10);
+-- more rows
 INSERT INTO second_table
 VALUES(2, "ALEX", 3);
+-- more rows
 INSERT INTO second_table
 VALUES(3, "Bob", 14);
+--more rows
+INSERT INTO second_table
 VALUES (4, "George", 8);
