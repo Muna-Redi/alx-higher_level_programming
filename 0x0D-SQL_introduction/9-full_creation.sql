@@ -5,6 +5,7 @@ CREATE TABLE IF NOT EXISTS second_table (
 	name varchar(256),
 	score integer
 );
+-- adding multipler rows
 INSERT INTO second_table (id, name, score)
 	VALUES
 	(1, "John", 10),
