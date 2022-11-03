@@ -1,9 +1,9 @@
 -- creating a table and adding values (rows)
 -- creating second_table with values for decription id, name and score
 CREATE TABLE IF NOT EXISTS second_table (
-	id integer,
-	name varchar(256),
-	score integer
+	id INT,
+	name VARCHAR(256),
+	score INT
 );
 -- adding multiple rows
 INSERT INTO second_table (id, name, score)
