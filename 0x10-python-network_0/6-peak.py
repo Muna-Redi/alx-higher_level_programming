@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """ Script that distributes an archive to the web server, using the function
     do_deploy, (based on the file 1-pack_web_static.py)
 """
