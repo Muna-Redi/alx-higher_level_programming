@@ -1,1 +1,1 @@
-HTTP Requests and Responses (GET method) using "url"
+HTTP Requests and Responses (GET, POST method) using "url"
